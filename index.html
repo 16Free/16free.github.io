@@ -30,6 +30,7 @@
       </div>
       <div class="menu">
         <strong class="animate-init">Me:</strong>
+        <a href="javascript:void(0);" class="animate-init masked" onclick="showQRCode();" style="font-weight: bold;">微信公众号</a>
         <a href="//blog.svend.cc" target="_blank" class="animate-init" title="blog">Blog</a>
         <a href="http://note.svend.cc" target="_blank" class="animate-init" title="博客、笔记">Notes</a>
       </div>
@@ -45,6 +46,11 @@
       <div class="location">
         <i class="location-icon"></i>
         <span class="location-text animate-init">Suzhou,China</span>
+      </div>
+    </div>
+    <div id="qrcode" class="qrcode" onclick="hideQRCode();">
+      <div  class="qrcode-container">
+        <img src="./mrgeekg.jpg" alt="公众号：mrgeekg">
       </div>
     </div>
   </div>
@@ -92,6 +98,16 @@
         }).promise().done();
       }
     });
+
+    function showQRCode () {
+      var qrcodeEl = document.getElementById('qrcode');
+      qrcodeEl.style.display = 'block';
+    }
+
+    function hideQRCode () {
+      var qrcodeEl = document.getElementById('qrcode');
+      qrcodeEl.style.display = 'none';
+    }
   </script>
 </body>
 
