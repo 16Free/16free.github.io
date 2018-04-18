@@ -10,6 +10,7 @@
   <link rel="icon" href="/favicon.ico"
     type="image/x-icon">
   <link href='//fonts.googleapis.com/css?family=Open+Sans|Montserrat:700' rel='stylesheet' type='text/css'>
+  <link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -49,7 +50,7 @@
       </div>
     </div>
     <div id="qrcode" class="qrcode" onclick="hideQRCode();">
-      <div  class="qrcode-container">
+      <div id="qrcode-container"  class="qrcode-container">
         <img src="./mrgeekg.jpg" alt="公众号：mrgeekg">
       </div>
     </div>
@@ -101,12 +102,18 @@
 
     function showQRCode () {
       var qrcodeEl = document.getElementById('qrcode');
+      var qrcodeContainerEl = document.getElementById('qrcode-container');
       qrcodeEl.style.display = 'block';
+      qrcodeContainerEl.className = "qrcode-container animated zoomIn";
     }
 
     function hideQRCode () {
       var qrcodeEl = document.getElementById('qrcode');
-      qrcodeEl.style.display = 'none';
+      var qrcodeContainerEl = document.getElementById('qrcode-container');
+      qrcodeContainerEl.className = "qrcode-container animated zoomOut";
+      setTimeout(function(){
+        qrcodeEl.style.display = 'none';
+      }, 500);
     }
   </script>
 </body>
