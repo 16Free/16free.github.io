@@ -18,10 +18,10 @@
     <div class="sidebar">
       <div class="header">
         <h1>Svend</h1>
-        <h2> Web Developer</h2>
+        <h2> 💭 Web Developer</h2>
         <div class="quote">
-          <p class="quote-text animate-init">先相信你自己，然后别人才会相信你。</p>
-          <p class="quote-author animate-init"><strong>屠格涅夫</strong></p>
+          <p class="quote-text animate-init" id="hitokoto">:D 获取中...</p>
+          <p class="quote-author animate-init"><strong id="hitokoto-from"></strong></p>
         </div>
       </div>
       <div class="menu">
@@ -98,6 +98,8 @@
           top: 0
         }).promise().done();
       }
+
+      hitokoto();
     });
 
     function showQRCode () {
@@ -114,6 +116,17 @@
       setTimeout(function(){
         qrcodeEl.style.display = 'none';
       }, 500);
+    }
+
+    function hitokoto() {
+      $.ajax({
+        url: '//v1.hitokoto.cn/',
+        type: 'get',
+        success: function(res){
+          $('#hitokoto').text(res.hitokoto);
+          $('#hitokoto-from').text(res.from);
+        }
+      });
     }
   </script>
 </body>
