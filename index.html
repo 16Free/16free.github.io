@@ -107,6 +107,8 @@
       var qrcodeEl = document.getElementById('qrcode');
       var qrcodeContainerEl = document.getElementById('qrcode-container');
       qrcodeEl.style.display = 'block';
+      
+      qrcodeEl.className = "qrcode animated fadeIn";
       qrcodeContainerEl.className = "qrcode-container animated zoomIn";
     }
 
@@ -114,6 +116,7 @@
       var qrcodeEl = document.getElementById('qrcode');
       var qrcodeContainerEl = document.getElementById('qrcode-container');
       qrcodeContainerEl.className = "qrcode-container animated zoomOut";
+      qrcodeEl.className = "qrcode animated fadeOut";
       setTimeout(function(){
         qrcodeEl.style.display = 'none';
       }, 500);
